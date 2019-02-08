@@ -3,14 +3,14 @@
 This program is built as a side-project.
 
 ## Running on Live
-s
+
 This application will be  hosted on Heroku in free plan and auto-deployed with every change.
 
 **Note**: Due to Heroku/free, the app closes itself after 30 minutes of reactivitiy and reopens when called again, which takes ~5 more seconds.
 
 | Purpose | URL
 | - | -
-| 404 page | https://adcash-stock.herokuapp.com/anypage
+| 404 page | 
 
 
 ## Building and running locally
