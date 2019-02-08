@@ -1,6 +1,6 @@
 # MINI-LINKEDIN
 
-This program is built for Adcash application challenge.
+This program is built as a side-project.
 
 ## Running on Live
 s
