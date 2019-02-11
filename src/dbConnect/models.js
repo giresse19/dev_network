@@ -1,28 +1,27 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 // DB config
-const dbURI = require("../config/keys").mongoURI;
+const dbURI = require("../../config/keys").mongoURI;
 
 // connect to mongoDB
 mongoose
   .connect(dbURI, {
-    keepAlive: true,
-    reconnectTries: 50,
-    useMongoClient: true
+    useNewUrlParser: true
   })
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
-const UserSchema = Schema({
+const UserSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  avatar: { type: String, required: true },
+  avatar: { type: String, required: false },
   date: { type: Date, default: Date.now }
 });
 
-const LogSchema = Schema({
-    message: {type:String, required:true}
+const LogSchema = new Schema({
+  message: { type: String, required: true }
 });
 
 module.exports.User = mongoose.model("User", UserSchema);

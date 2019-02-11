@@ -1,10 +1,15 @@
-const post = require("./post");
-const profile = require("./profile");
-const users = require("./users");
+const bodyParser = require("body-parser");
+const post = require("./routes/api/post");
+const profile = require("./routes/api/profile");
+const users = require("./routes/api/users");
 
 const express = require("express");
 
 const app = express();
+
+// body parser middleware:
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   res.setHeader("Content-Type", "application/json");
@@ -19,13 +24,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => res.send("hello world!"));
+// use routes
+app.use("/api/v1/users", users);
 
-app.get("/api/v1/users", (req, res) => users(res.apiRespnse));
+app.use("/api/v1/post", post);
 
-app.use((req, res) =>
-  res.apiRespnse({ status: 404, message: "Page not found" })
-);
+app.use("/api/v1/profile", profile);
+
 
 app.use((err, req, res, next) => res.apiRespnse("Server error", +err));
 module.exports = app;
