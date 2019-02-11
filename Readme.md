@@ -53,22 +53,28 @@ npm run server
 * It has only one custom middleware that
   * Sets response header for JSON
   * Creates a function to return APIs in `{status:200, data: ...}` format
-* It has a public API which uses `users` service
-* It has a fallback route for 404
+* It has a public and private API which uses `users` service
 * It has an Error route to catch uncaught errors
 
 ### src/models.js
 * Mongoose connection starts here
-* Mongoose models and their schemas are defined and exported here (to be only used by `src/db.js`)
+* Mongoose models and their schemas are defined and exported here 
 
-### src/db.js
-* Uses `src/models` to get Mongoose Models
-* Behaves like ORM layer
+### config/key.js
+* contains application `keys` and important `secrets` 
+
+### config/passport.js
+* Uses `src/models` to get Mongoose Model for User
+* It has only one custom middleware that
+ * finds user from model by Id 
+ * returns `done` method upon finding with either a `success` for user found or `failure` for user not found
 
 ### src/users.js
-* Handling ofUsers logic is here
-* Contains only one exported service (see `module.exports = `)
-* All subroutines are seperated as functions 
+* Handling of Users logic is here
+* Uses `src/models` to get Mongoose Model for User
+* contains POST request for `/register`, `/login` and GET for `/current`, User
+* Uses the `config/passport` to assist in authentication `loged In` User.
+* Uses `sign` middleware from passport module to return token and payload to authenticated users
 
 ### src/post.js
 * Handling of Post logic is here
