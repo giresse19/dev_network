@@ -8,11 +8,6 @@ This application will be  hosted on Heroku in free plan and auto-deployed with e
 
 **Note**: Due to Heroku/free, the app closes itself after 30 minutes of reactivitiy and reopens when called again, which takes ~5 more seconds.
 
-| Purpose | URL
-| - | -
-| 404 page | 
-
-
 ## Building and running locally
 
 To run this locally, you need Node.js > 8 and a MongoDB.
