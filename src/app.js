@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const post = require("./routes/api/post");
 const profile = require("./routes/api/profile");
 const users = require("./routes/api/users");
+const passport = require("passport");
 
 const express = require("express");
 
@@ -24,6 +25,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// passport middleware
+app.use(passport.initialize())
+
+// passport config
+require("../config/passport")(passport);
+
 // use routes
 app.use("/api/v1/users", users);
 
@@ -32,5 +39,6 @@ app.use("/api/v1/post", post);
 app.use("/api/v1/profile", profile);
 
 
-app.use((err, req, res, next) => res.apiRespnse("Server error", +err));
+/* app.use((err, req, res, next) => res.apiRespnse("Server error", +err)); */
+
 module.exports = app;
