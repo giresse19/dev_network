@@ -53,6 +53,7 @@ npm run server
   * Sets response header for JSON
   * Creates a function to return APIs in `{status:200, data: ...}` format
 * It has a public and private API which uses `users` service
+*  API routes defined here
 * It has an Error route to catch uncaught errors
 
 ### src/models.js
