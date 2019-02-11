@@ -25,9 +25,9 @@ npm install
 npm run server
 ```
 
-| Purpose       | URL
+| Purpose(type) | URL
 | - | -
-| 404 page      | http://localhost:5000/anypage
+| 404 page(GET) | http://localhost:5000/anypage
 | register(POST)| http://localhost:5000/api/v1/users/register
 | login(POST)   | http://localhost:5000/api/v1/users/login
 | current(GET)  |http://localhost:5000/api/v1/users/current
