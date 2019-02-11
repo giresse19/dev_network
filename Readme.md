@@ -30,7 +30,7 @@ npm run server
 | 404 page(GET) | http://localhost:5000/anypage
 | register(POST)| http://localhost:5000/api/v1/users/register
 | login(POST)   | http://localhost:5000/api/v1/users/login
-| current(GET)  |http://localhost:5000/api/v1/users/current
+| current(GET)  | http://localhost:5000/api/v1/users/current
 
 
 ## Folder structure
