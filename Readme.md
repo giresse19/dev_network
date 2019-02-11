@@ -25,12 +25,12 @@ npm install
 npm run server
 ```
 
-| Purpose                    | URL
+| Purpose       | URL
 | - | -
-| 404 page                   | http://localhost:5000/anypage
-| register(user rigsitration)| http://localhost:5000/api/v1/users/register
-| login(user rigsitration)   | http://localhost:5000/api/v1/users/login
-| current(private route)     |http://localhost:5000/api/v1/users/current
+| 404 page      | http://localhost:5000/anypage
+| register(POST)| http://localhost:5000/api/v1/users/register
+| login(POST)   | http://localhost:5000/api/v1/users/login
+| current(GET)  |http://localhost:5000/api/v1/users/current
 
 
 ## Folder structure
