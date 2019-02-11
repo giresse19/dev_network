@@ -73,7 +73,9 @@ npm run server
 * Uses `src/models` to get Mongoose Model for User
 * contains POST request for `/register`, `/login` and GET for `/current`, User
 * Uses the `config/passport` to assist in authentication `loged In` User.
+* Uses `jsonwebtoken` euthentication strategy
 * Uses `sign` middleware from passport module to return token and payload to authenticated users
+* Does not use `session` based authentication, set expiration of token for logged in user.
 
 ### src/post.js
 * Handling of Post logic is here
