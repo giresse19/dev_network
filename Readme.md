@@ -1,4 +1,4 @@
-# MINI-LINKEDIN
+# Profile-Portfolio
 
 This program is built as a side-project.
 
