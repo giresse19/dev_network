@@ -38,11 +38,6 @@ app.use("/api/v1/post", post);
 
 app.use("/api/v1/profile", profile);
 
-/* app.use((req, res) =>
-  res.apiResponse({ status: 404, message: "Page not found" })
-);
-
-app.use((err, req, res, next) => res.apiResponse("Server error. " + err)) */
 
 
 module.exports = app;
